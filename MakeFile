@@ -1,0 +1,16 @@
+all: gen
+
+.PHONY : gen
+
+gen: codegen
+
+swagger:
+	@echo "Get swagger files ..."
+
+codegen:
+	@echo "Installing oapi-codegen ..."
+	go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
+	@echo "Generating api code for autoload..."
+	oapi-codegen -package=api -generate="types,client,spec" swagger/autoload.json > api/autoload.gen.go
+	@echo "Generating api code for announcements..."
+	oapi-codegen -package=api -generate="types,client,spec" swagger/announcements.json > api/announcements.gen.go
