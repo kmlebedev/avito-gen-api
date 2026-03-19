@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: Overlay
+  version: 0.0.1
+actions:
+  - target: $.components.schemas.VacancyCreate.properties.age_preferences
+    update:
+      x-go-type-name: VacancyCreateAgePreferencesInline
+  - target: $.components.schemas.VacancyUpdate.properties.age_preferences
+    update:
+      x-go-type-name: VacancyUpdateAgePreferencesInline
+  - target: $.components.schemas.VacancyV2Create.properties.age_preferences
+    update:
+      x-go-type-name: VacancyV2CreateAgePreferencesInline
+  - target: $.components.schemas.NotFoundError
+    update:
+      x-go-type-name: NotFoundErrorEmployee
+  - target: $.components.schemas.notFoundError
+    update:
+      x-go-type-name: NotFoundError404

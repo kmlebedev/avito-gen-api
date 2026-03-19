@@ -20,3 +20,5 @@ codegen:
 	oapi-codegen -package=api -generate="types,client,spec" swagger/messenger.json > messenger/messenger.gen.go
 	@echo "Generating api code for User info self..."
 	oapi-codegen -package=api -generate="types,client,spec" swagger/userinfoself.json > userinfoself/userinfoself.gen.go
+	@echo "Generating api code for Work..."
+	oapi-codegen -package=api -generate="types,client,spec" --config=work/codegen.yaml swagger/work.json > work/work.gen.go
