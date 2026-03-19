@@ -11,12 +11,12 @@ codegen:
 	@echo "Installing oapi-codegen ..."
 	go install github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen@latest
 	@echo "Generating api code for Autoload..."
-	oapi-codegen -package=api -generate="types,client,spec" swagger/autoload.json > api/autoload.gen.go
+	oapi-codegen -package=api -generate="types,client,spec" swagger/autoload.json > autoload/autoload.gen.go
 	@echo "Generating api code for Announcements..."
-	oapi-codegen -package=api -generate="types,client,spec" swagger/announcements.json > api/announcements.gen.go
+	oapi-codegen -package=api -generate="types,client,spec" swagger/announcements.json > announcements/announcements.gen.go
 	@echo "Generating api code for Authorization..."
-	oapi-codegen -package=api -generate="types,client,spec" swagger/authorization.json > api/authorization.gen.go
+	oapi-codegen -package=api -generate="types,client,spec" swagger/authorization.json > authorization/authorization.gen.go
 	@echo "Generating api code for Messenger..."
-	oapi-codegen -package=api -generate="types,client,spec" swagger/messenger.json > api/messenger.gen.go
+	oapi-codegen -package=api -generate="types,client,spec" swagger/messenger.json > messenger/messenger.gen.go
 	@echo "Generating api code for User info self..."
-	oapi-codegen -package=api -generate="types,client,spec" swagger/userinfoself.json > api/userinfoself.gen.go
+	oapi-codegen -package=api -generate="types,client,spec" swagger/userinfoself.json > userinfoself/userinfoself.gen.go
