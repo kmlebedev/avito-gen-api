@@ -475,7 +475,7 @@ type ItemsInfoWithCategoryAvito struct {
 		} `json:"category,omitempty"`
 
 		// Id Идентификатор объявления
-		Id *int32 `json:"id,omitempty"`
+		Id *int64 `json:"id,omitempty"`
 
 		// Price Цена объявления (null значение означает, что цена не указана)
 		Price *int `json:"price,omitempty"`
