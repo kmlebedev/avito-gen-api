@@ -647,7 +647,7 @@ type UpdatePriceRequest struct {
 }
 
 // UpdatePriceResponse defines model for UpdatePriceResponse.
-type UpdatePriceResponse struct {
+type UpdatePriceResponseResult struct {
 	Result struct {
 		Success *bool `json:"success,omitempty"`
 	} `json:"result"`
@@ -2289,7 +2289,7 @@ func (r GetItemsInfoResponse) StatusCode() int {
 type UpdatePriceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *UpdatePriceResponse
+	JSON200      *UpdatePriceResponseResult
 	JSON400      *BadRequestError
 	JSON401      *AuthError
 	JSON404      *NotFoundError
@@ -2830,7 +2830,7 @@ func ParseUpdatePriceResponse(rsp *http.Response) (*UpdatePriceResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest UpdatePriceResponse
+		var dest UpdatePriceResponseResult
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
