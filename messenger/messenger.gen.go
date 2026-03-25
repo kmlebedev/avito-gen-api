@@ -270,7 +270,7 @@ type Chat struct {
 		Type  *string `json:"type,omitempty"`
 		Value *struct {
 			// Id ID объявления
-			Id *int32 `json:"id,omitempty"`
+			Id *int64 `json:"id,omitempty"`
 
 			// Images Изображения с карточки объявления
 			Images *struct {
