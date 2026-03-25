@@ -365,7 +365,7 @@ type Chat struct {
 			} `json:"avatar,omitempty"`
 
 			// ItemId ID объявления, выложенного пользователем
-			ItemId *int32 `json:"item_id,omitempty"`
+			ItemId *int64 `json:"item_id,omitempty"`
 
 			// Url Ссылка на профиль пользователя в Авито
 			Url *string `json:"url,omitempty"`
